@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="hamburgueses_mon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +18,46 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamburguesa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrJ-yn-AaO">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mi-BD-n9S">
+                                <state key="normal" title="Quiero una hamburguesa!"/>
+                                <connections>
+                                    <action selector="novaHamburguesa" destination="BYZ-38-t0r" eventType="touchUpInside" id="VmK-Dt-7Dw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="País" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKA-RR-rbh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="s92-fh-Hgg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9mi-BD-n9S" firstAttribute="centerX" secondItem="NKA-RR-rbh" secondAttribute="centerX" id="1O6-gd-U0Y"/>
+                            <constraint firstItem="NKA-RR-rbh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="II1-qw-sH1"/>
+                            <constraint firstItem="NKA-RR-rbh" firstAttribute="trailing" secondItem="DrJ-yn-AaO" secondAttribute="trailing" id="Jtr-Hx-YjX"/>
+                            <constraint firstItem="DrJ-yn-AaO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NWt-2c-yqw"/>
+                            <constraint firstItem="NKA-RR-rbh" firstAttribute="top" secondItem="DrJ-yn-AaO" secondAttribute="bottom" constant="99" id="WHz-gK-D8o"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9mi-BD-n9S" secondAttribute="bottom" constant="57" id="Yru-el-A53"/>
+                            <constraint firstItem="9mi-BD-n9S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="62" id="aoy-9J-0y7"/>
+                            <constraint firstItem="NKA-RR-rbh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="bTO-Ma-pyH"/>
+                            <constraint firstItem="DrJ-yn-AaO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="hKf-Ht-Uho"/>
+                            <constraint firstItem="NKA-RR-rbh" firstAttribute="leading" secondItem="DrJ-yn-AaO" secondAttribute="leading" id="vLv-4h-TeE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="MostraHamburguesa" destination="DrJ-yn-AaO" id="36Z-YN-zNA"/>
+                        <outlet property="mostraPais" destination="NKA-RR-rbh" id="6QF-au-D8a"/>
+                        <outlet property="novaHamburguesa" destination="9mi-BD-n9S" id="XSK-pS-Scx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
